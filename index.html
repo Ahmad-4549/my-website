@@ -3,46 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Animated Background</title>
+  <title>My Page</title>
   <style>
-    /* Reset */
+    /* Reset default styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Fullscreen animated gradient background */
+    /* Full screen animated gradient background */
     body {
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(-45deg, #ff6b6b, #f8e473, #42e695, #5f72be);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
       font-family: Arial, sans-serif;
+      background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ade80, #facc15);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
       color: white;
-      overflow: hidden;
+      text-align: center;
     }
 
-    /* Animation */
-    @keyframes gradientBG {
+    @keyframes gradient {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    /* Example text styling */
-    h1 {
-      font-size: 3rem;
-      text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-      z-index: 1;
-      position: relative;
+    /* Container for your content */
+    .content {
+      max-width: 600px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.4); /* Slight see-through box */
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 1rem;
+      color: white;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 2px solid white;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: white;
+      color: black;
     }
   </style>
 </head>
 <body>
-  <h1>My Cool Animated Background</h1>
+  <div class="content">
+    <h1>Welcome to My Page</h1>
+    <p>This is a modern landing page with a beautiful animated gradient background. You can replace this text with anything you want.</p>
+    <a href="#" class="btn">Learn More</a>
+  </div>
 </body>
 </html>

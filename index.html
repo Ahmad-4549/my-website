@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Ahmad's Portfolio</title>
     <style>
-        /* General Styles */
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
@@ -15,7 +14,6 @@
             overflow-x: hidden;
         }
 
-        /* Header */
         header {
             background: linear-gradient(135deg, #0077ff, #00c6ff);
             color: white;
@@ -41,11 +39,12 @@
             animation: slideDown 1s ease-out;
         }
 
-        p {
+        .tagline {
             font-size: 1.2rem;
+            min-height: 30px;
+            margin-top: 5px;
         }
 
-        /* Sections */
         section {
             padding: 50px 20px;
             max-width: 800px;
@@ -57,7 +56,6 @@
             animation: fadeUp 1s ease-out;
         }
 
-        /* Footer */
         footer {
             background: #222;
             color: white;
@@ -66,4 +64,65 @@
             font-size: 0.9rem;
         }
 
-        /* Links */
+        a {
+            color: #0077ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #00c6ff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://via.placeholder.com/150" alt="Profile Picture">
+    <h1>Ahmad</h1>
+    <p class="tagline"></p>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p>Hi! I’m Ahmad, passionate about technology, coding, and creating content. I’m learning Python, web development, and exploring AI. This website will showcase my projects and journey!</p>
+</section>
+
+<section>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    <p>GitHub: <a href="https://github.com/Ahmad-4549" target="_blank">github.com/Ahmad-4549</a></p>
+</section>
+
+<footer>
+    <p>© 2025 Ahmad | Built with ❤️ using GitHub Pages</p>
+</footer>
+
+<script>
+    // Typing animation for tagline
+    const tagline = "Future Computer Scientist | Content Creator";
+    let i = 0;
+    function typeEffect() {
+        if (i < tagline.length) {
+            document.querySelector(".tagline").innerHTML += tagline.charAt(i);
+            i++;
+            setTimeout(typeEffect, 80);
+        }
+    }
+    window.onload = typeEffect;
+</script>
+
+</body>
+</html>

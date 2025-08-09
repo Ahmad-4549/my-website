@@ -13,116 +13,100 @@
             text-align: center;
             overflow-x: hidden;
         }
-
         header {
             background: linear-gradient(135deg, #0077ff, #00c6ff);
             color: white;
             padding: 50px 0;
-            animation: fadeIn 1s ease-out;
         }
-
         header img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             border: 4px solid white;
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
         }
-        header img:hover {
-            transform: scale(1.1) rotate(3deg);
-        }
-
-        h1 {
-            margin-top: 15px;
-            font-size: 2.8rem;
-            animation: slideDown 1s ease-out;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            min-height: 30px;
-            margin-top: 5px;
-        }
-
+        h1 { margin-top: 15px; font-size: 2.8rem; }
+        .tagline { font-size: 1.2rem; }
         section {
-            padding: 50px 20px;
+            padding: 40px 20px;
             max-width: 800px;
             margin: auto;
             background: white;
             border-radius: 10px;
             margin-top: 30px;
             box-shadow: 0px 4px 20px rgba(0,0,0,0.05);
-            animation: fadeUp 1s ease-out;
         }
-
         footer {
             background: #222;
             color: white;
             padding: 15px;
             margin-top: 40px;
-            font-size: 0.9rem;
         }
-
-        a {
-            color: #0077ff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        a:hover {
-            color: #00c6ff;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        a { color: #0077ff; text-decoration: none; }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="https://via.placeholder.com/150" alt="Profile Picture">
-    <h1>Ahmad</h1>
-    <p class="tagline"></p>
+    <img id="profile-pic" src="https://via.placeholder.com/150" alt="Profile Picture">
+    <h1 id="name">Ahmad</h1>
+    <p class="tagline" id="tagline">Future Computer Scientist | Content Creator</p>
+    <br>
+    <button onclick="toggleEdit()">Edit Profile</button>
 </header>
 
 <section>
     <h2>About Me</h2>
-    <p>Hi! I’m Ahmad, passionate about technology, coding, and creating content. I’m learning Python, web development, and exploring AI. This website will showcase my projects and journey!</p>
-</section>
-
-<section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/Ahmad-4549" target="_blank">github.com/Ahmad-4549</a></p>
+    <p id="about-text">Hi! I’m Ahmad, passionate about technology, coding, and creating content. I’m learning Python, web development, and exploring AI. This website will showcase my projects and journey!</p>
 </section>
 
 <footer>
     <p>© 2025 Ahmad | Built with ❤️ using GitHub Pages</p>
 </footer>
 
-<script>
-    // Typing animation for tagline
-    const tagline = "Future Computer Scientist | Content Creator";
-    let i = 0;
-    function typeEffect() {
-        if (i < tagline.length) {
-            document.querySelector(".tagline").innerHTML += tagline.charAt(i);
-            i++;
-            setTimeout(typeEffect, 80);
-        }
-    }
-    window.onload = typeEffect;
-</script>
+<!-- Hidden Edit Panel -->
+<div id="edit-panel" style="display:none; padding:20px; background:#eee;">
+    <h3>Edit Your Info</h3>
+    <input type="text" id="name-input" placeholder="Your Name"><br><br>
+    <input type="text" id="tagline-input" placeholder="Your Tagline"><br><br>
+    <textarea id="about-input" placeholder="About Me"></textarea><br><br>
+    <input type="file" id="pic-input" accept="image/*"><br><br>
+    <button onclick="saveProfile()">Save</button>
+</div>
 
-</body>
-</html>
+<script>
+    // Load saved data from localStorage
+    document.addEventListener("DOMContentLoaded", function() {
+        if(localStorage.name) document.getElementById("name").innerText = localStorage.name;
+        if(localStorage.tagline) document.getElementById("tagline").innerText = localStorage.tagline;
+        if(localStorage.about) document.getElementById("about-text").innerText = localStorage.about;
+        if(localStorage.profilePic) document.getElementById("profile-pic").src = localStorage.profilePic;
+    });
+
+    function toggleEdit() {
+        const panel = document.getElementById("edit-panel");
+        panel.style.display = panel.style.display === "none" ? "block" : "none";
+    }
+
+    function saveProfile() {
+        let name = document.getElementById("name-input").value;
+        let tagline = document.getElementById("tagline-input").value;
+        let about = document.getElementById("about-input").value;
+        let picFile = document.getElementById("pic-input").files[0];
+
+        if(name) {
+            document.getElementById("name").innerText = name;
+            localStorage.name = name;
+        }
+        if(tagline) {
+            document.getElementById("tagline").innerText = tagline;
+            localStorage.tagline = tagline;
+        }
+        if(about) {
+            document.getElementById("about-text").innerText = about;
+            localStorage.about = about;
+        }
+        if(picFile) {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById("profile-pic").src = e.target.result;
+                localStorage.profilePic = e.target.

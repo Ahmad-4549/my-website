@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammad Ahmad - Resume</title>
+  <title>Muhammad Ahmad - Online Resume</title>
   <style>
     /* Reset */
     * {
@@ -12,106 +12,125 @@
       box-sizing: border-box;
     }
 
-    /* Fullscreen gradient background */
+    /* Background Animation */
     body {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      font-family: Arial, sans-serif;
+      color: white;
       background: linear-gradient(-45deg, #ff6b6b, #f8e473, #42e695, #5f72be);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
+      min-height: 100vh;
       padding: 20px;
     }
-
-    /* Animation */
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
     h1 {
       font-size: 3rem;
-      text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-      margin-bottom: 10px;
     }
-
     h2 {
-      font-size: 1.5rem;
-      font-weight: 300;
-      margin-bottom: 30px;
+      font-size: 2rem;
+      border-bottom: 2px solid rgba(255,255,255,0.3);
+      padding-bottom: 5px;
     }
 
-    .section {
-      max-width: 600px;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 20px;
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    /* Skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill {
+      background: rgba(255,255,255,0.2);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Projects */
+    .project {
+      background: rgba(255,255,255,0.1);
+      padding: 10px;
       border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
-    }
-
-    h3 {
       margin-bottom: 10px;
-      font-size: 1.3rem;
     }
 
-    ul {
-      list-style: none;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    a {
-      color: yellow;
+    /* Contact */
+    .contact a {
+      color: #fff;
       text-decoration: none;
     }
-
-    a:hover {
+    .contact a:hover {
       text-decoration: underline;
     }
-
   </style>
 </head>
 <body>
-  <h1>Muhammad Ahmad</h1>
-  <h2>Tech Enthusiast | Aspiring AI & Data Science Professional</h2>
+  <div class="container">
+    <h1>Muhammad Ahmad</h1>
+    <p style="text-align:center; font-style:italic;">Aspiring Computer Scientist | AI Enthusiast | Content Creator</p>
 
-  <div class="section">
-    <h3>About Me</h3>
-    <p>I'm passionate about technology, coding, and content creation. I enjoy exploring artificial intelligence, data science, and cybersecurity. I aim to work in tech both in Pakistan and internationally through remote opportunities.</p>
-  </div>
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I’m Muhammad Ahmad, passionate about technology, artificial intelligence, and creating impactful digital content. 
+        Currently learning Python and exploring AI, Data Science, and Cybersecurity. 
+        I aim to build projects that can help people and improve systems worldwide.
+      </p>
+    </section>
 
-  <div class="section">
-    <h3>Skills</h3>
-    <ul>
-      <li>Python & C++ Programming</li>
-      <li>Data Analysis & Statistics</li>
-      <li>Cybersecurity Fundamentals</li>
-      <li>Content Creation (Tech & Science)</li>
-    </ul>
-  </div>
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">Python</div>
+        <div class="skill">C++</div>
+        <div class="skill">HTML & CSS</div>
+        <div class="skill">Data Science Basics</div>
+        <div class="skill">Video Editing</div>
+        <div class="skill">Content Creation</div>
+      </div>
+    </section>
 
-  <div class="section">
-    <h3>Projects</h3>
-    <ul>
-      <li>Learning Python with C++ Comparisons</li>
-      <li>AI & Data Science Learning Journey</li>
-      <li>Tech Blog: The Curious Signal</li>
-    </ul>
-  </div>
+    <section>
+      <h2>Projects</h2>
+      <div class="project">
+        <strong>Python Learning Series</strong> - A collection of beginner-friendly Python programs with C++ comparisons.
+      </div>
+      <div class="project">
+        <strong>The Curious Signal</strong> - My tech and science content creation brand.
+      </div>
+    </section>
 
-  <div class="section">
-    <h3>Contact</h3>
-    <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-    <p>LinkedIn: <a href="#">linkedin.com/in/muhammadahmad</a></p>
+    <section>
+      <h2>Contact</h2>
+      <p class="contact">
+        📧 Email: <a href="mailto:ahmad@example.com">muhammad.a4549@gmail.com</a><br>
+        🌐 GitHub: <a href="https://github.com/username" target="_blank">github.com/Ahmad-4549</a><br>
+        💼 LinkedIn: <a href="https://linkedin.com/in/username" target="_blank">linkedin.com/in/username</a>
+      </p>
+    </section>
   </div>
 </body>
 </html>

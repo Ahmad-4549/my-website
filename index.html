@@ -3,78 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Page</title>
+  <title>Muhammad Ahmad - Online Resume</title>
   <style>
-    /* Reset default styles */
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Full screen animated gradient background */
+    /* Animated gradient background */
     body {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-family: Arial, sans-serif;
-      background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ade80, #facc15);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
       color: white;
-      text-align: center;
+      background: linear-gradient(-45deg, #ff6b6b, #f8e473, #42e695, #5f72be);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      line-height: 1.6;
     }
 
-    @keyframes gradient {
+    @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    /* Container for your content */
-    .content {
-      max-width: 600px;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.4); /* Slight see-through box */
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.4);
       border-radius: 15px;
-      backdrop-filter: blur(10px);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     }
 
-    .content h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
+    /* Heading */
+    header {
+      text-align: center;
+      margin-bottom: 30px;
     }
 
-    .content p {
-      font-size: 1.2rem;
+    header h1 {
+      font-size: 3rem;
+    }
+
+    header h2 {
+      font-weight: normal;
+      font-size: 1.3rem;
+      color: #f0f0f0;
+    }
+
+    /* Sections */
+    section {
       margin-bottom: 25px;
-      line-height: 1.5;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      font-size: 1rem;
-      color: white;
-      background-color: rgba(255, 255, 255, 0.2);
-      border: 2px solid white;
-      border-radius: 30px;
+    section h3 {
+      font-size: 1.8rem;
+      border-bottom: 2px solid white;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      margin: 8px 0;
+    }
+
+    /* Contact */
+    .contact a {
+      color: yellow;
       text-decoration: none;
-      transition: 0.3s;
     }
 
-    .btn:hover {
-      background-color: white;
-      color: black;
+    .contact a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    <h1>Welcome to My Page</h1>
-    <p>This is a modern landing page with a beautiful animated gradient background. You can replace this text with anything you want.</p>
-    <a href="#" class="btn">Learn More</a>
+  <div class="container">
+    <header>
+      <h1>Muhammad Ahmad</h1>
+      <h2>Future AI Engineer | Tech & Science Content Creator</h2>
+    </header>
+
+    <section>
+      <h3>About Me</h3>
+      <p>
+        I am passionate about technology, artificial intelligence, and content creation.
+        Currently pursuing studies in Computer Science, with interests in data science,
+        cybersecurity, and innovative problem solving.
+      </p>
+    </section>
+
+    <section>
+      <h3>Skills</h3>
+      <ul>
+        <li>Python & C++ Programming</li>
+        <li>Content Creation & Video Editing</li>
+        <li>Data Analysis & Visualization</li>
+        <li>Web Development Basics</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Projects</h3>
+      <ul>
+        <li>Personal Tech Blog - The Curious Signal</li>
+        <li>Python Learning Journey</li>
+        <li>Data Science Mini Projects</li>
+      </ul>
+    </section>
+
+    <section class="contact">
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/yourgithub" target="_blank">github.com/yourgithub</a></p>
+    </section>
   </div>
 </body>
 </html>

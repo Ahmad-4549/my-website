@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammad Ahmad - Online Resume</title>
+  <title>Muhammad Ahmad - Resume</title>
   <style>
     /* Reset */
     * {
@@ -12,119 +12,106 @@
       box-sizing: border-box;
     }
 
-    /* Animated gradient background */
+    /* Fullscreen gradient background */
     body {
-      font-family: Arial, sans-serif;
-      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       background: linear-gradient(-45deg, #ff6b6b, #f8e473, #42e695, #5f72be);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
-      line-height: 1.6;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      padding: 20px;
     }
 
+    /* Animation */
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    /* Container */
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px;
-      background: rgba(0, 0, 0, 0.4);
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    h1 {
+      font-size: 3rem;
+      text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+      margin-bottom: 10px;
     }
 
-    /* Heading */
-    header {
-      text-align: center;
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 300;
       margin-bottom: 30px;
     }
 
-    header h1 {
-      font-size: 3rem;
+    .section {
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
     }
 
-    header h2 {
-      font-weight: normal;
-      font-size: 1.3rem;
-      color: #f0f0f0;
-    }
-
-    /* Sections */
-    section {
-      margin-bottom: 25px;
-    }
-
-    section h3 {
-      font-size: 1.8rem;
-      border-bottom: 2px solid white;
-      padding-bottom: 5px;
+    h3 {
       margin-bottom: 10px;
+      font-size: 1.3rem;
     }
 
     ul {
       list-style: none;
     }
 
-    ul li {
-      margin: 8px 0;
+    li {
+      margin-bottom: 8px;
     }
 
-    /* Contact */
-    .contact a {
+    a {
       color: yellow;
       text-decoration: none;
     }
 
-    .contact a:hover {
+    a:hover {
       text-decoration: underline;
     }
+
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Muhammad Ahmad</h1>
-      <h2>Future AI Engineer | Tech & Science Content Creator</h2>
-    </header>
+  <h1>Muhammad Ahmad</h1>
+  <h2>Tech Enthusiast | Aspiring AI & Data Science Professional</h2>
 
-    <section>
-      <h3>About Me</h3>
-      <p>
-        I am passionate about technology, artificial intelligence, and content creation.
-        Currently pursuing studies in Computer Science, with interests in data science,
-        cybersecurity, and innovative problem solving.
-      </p>
-    </section>
+  <div class="section">
+    <h3>About Me</h3>
+    <p>I'm passionate about technology, coding, and content creation. I enjoy exploring artificial intelligence, data science, and cybersecurity. I aim to work in tech both in Pakistan and internationally through remote opportunities.</p>
+  </div>
 
-    <section>
-      <h3>Skills</h3>
-      <ul>
-        <li>Python & C++ Programming</li>
-        <li>Content Creation & Video Editing</li>
-        <li>Data Analysis & Visualization</li>
-        <li>Web Development Basics</li>
-      </ul>
-    </section>
+  <div class="section">
+    <h3>Skills</h3>
+    <ul>
+      <li>Python & C++ Programming</li>
+      <li>Data Analysis & Statistics</li>
+      <li>Cybersecurity Fundamentals</li>
+      <li>Content Creation (Tech & Science)</li>
+    </ul>
+  </div>
 
-    <section>
-      <h3>Projects</h3>
-      <ul>
-        <li>Personal Tech Blog - The Curious Signal</li>
-        <li>Python Learning Journey</li>
-        <li>Data Science Mini Projects</li>
-      </ul>
-    </section>
+  <div class="section">
+    <h3>Projects</h3>
+    <ul>
+      <li>Learning Python with C++ Comparisons</li>
+      <li>AI & Data Science Learning Journey</li>
+      <li>Tech Blog: The Curious Signal</li>
+    </ul>
+  </div>
 
-    <section class="contact">
-      <h3>Contact</h3>
-      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/yourgithub" target="_blank">github.com/yourgithub</a></p>
-    </section>
+  <div class="section">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/muhammadahmad</a></p>
   </div>
 </body>
 </html>
